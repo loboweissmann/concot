@@ -2,5 +2,5 @@ package concot
 
 class MoedaController {
 
-    def scaffold = Moeda
+    static scaffold = Moeda
 }

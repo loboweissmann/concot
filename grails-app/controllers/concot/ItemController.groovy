@@ -2,5 +2,5 @@ package concot
 
 class ItemController {
 
-    def scaffold = Item
+    static scaffold = Item
 }
