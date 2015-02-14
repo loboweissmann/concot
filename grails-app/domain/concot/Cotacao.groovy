@@ -7,7 +7,6 @@ class Cotacao {
 
 	static belongsTo = [item:Item, moeda:Moeda, fornecedor:Fornecedor]
 
+	
 
-    static constraints = {
-    }
 }
