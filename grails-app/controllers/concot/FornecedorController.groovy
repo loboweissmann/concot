@@ -8,6 +8,8 @@ class FornecedorController {
 		[fornecedores:Fornecedor.list(), mensagem:new EnvioEmail()]
 	}
 
+	def comunicacaoService
+
 	def enviarMensagem(EnvioEmail envio) {
 		envio.validate()
 		if (envio.hasErrors()) {
@@ -20,6 +22,9 @@ class FornecedorController {
 						   fornecedores:Fornecedor.list()])
 		} else {
 			flash.message = "Mensagem enviada com sucesso"
+			comunicacaoService.enviarMensagem(envio.fornecedor,
+											  envio.email,
+											  envio.mensagem)
 			render(view:'comunicacao')
 		}
 	}
