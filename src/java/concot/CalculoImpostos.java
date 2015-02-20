@@ -1,5 +1,5 @@
 package concot;
-
+import java.math.BigDecimal;
 /**
 	Classe fictícia que implementa um
 	calculo de impostos muito simples.
@@ -20,7 +20,7 @@ public class CalculoImpostos {
 		this.tarifa = valor;
 	}
 
-	public BigDecimal calcularTarifa(double valor) {
+	public double 	 calcularTarifa(double valor) {
 		return valor * tarifa;
 	}
 

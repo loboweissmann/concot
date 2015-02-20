@@ -9,12 +9,28 @@ import spock.lang.Specification
 @TestFor(ComunicacaoService)
 class ComunicacaoServiceSpec extends Specification {
 
+	
+
     def setup() {
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
+    void "verificando uma simples soma"() {
+    	when:
+    	def valor = service.soma(2,3)
+    	then:
+    	valor == 5
+    }
+
+    void "verificando com ranges"() {
+    	expect:
+    	service.soma(primeiro, segundo) == valor
+    	where:
+    	primeiro | segundo | valor
+    	    3    |   4     |   7
+    	    1    |   7     |   8
+    	    9    |   38    |   47
     }
 }

@@ -10,4 +10,8 @@ class ComunicacaoService {
 					   String mensagem) {
 		// Executa a tarefa de envio de e-mail
 	}
+
+	def soma(x, y) {
+		x + y
+	}
 }
