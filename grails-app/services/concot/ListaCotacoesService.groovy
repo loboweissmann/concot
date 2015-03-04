@@ -21,8 +21,11 @@ class ListaCotacoesService {
 	}
 
     def incluirCotacao(ListaCotacoes lista, Cotacao cotacao, Date data) {
-    	if (lista && cotacao && data && testeLimites(lista, cotacao)) {
-    		return new CotacaoLista(cotacao:cotacao, lista:lista, dataInclusao:data).save()
+    	if (ListaCotacoes.get(lista?.id) && 
+    		Cotacao.get(cotacao?.id) && data && testeLimites(lista, cotacao)) {
+    		println "Cheguei aqui"
+    		def item = new CotacaoLista(cotacao:cotacao, lista:lista, dataInclusao:data)
+    		return item.save(flush:true)
     	}
     	null
     }

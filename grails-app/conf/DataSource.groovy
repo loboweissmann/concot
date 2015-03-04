@@ -22,8 +22,8 @@ environments {
     }
     test {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/concot"
+            dbCreate = "create-drop"
+            url = "jdbc:mysql://localhost:3306/concot_test"
         }
     }
     production {

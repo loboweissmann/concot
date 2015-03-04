@@ -18,4 +18,8 @@ class ConcotTagLib {
     	}
     }
 
+    def comParametros = {attrs, body ->
+        out << "Olá ${attrs.nome}!"
+    }
+
 }

@@ -10,5 +10,8 @@ class CotacaoLista {
 	]
 
     static constraints = {
+    	dataInclusao nullable:false
+    	lista nullable:false
+    	cotacao nullable:false
     }
 }

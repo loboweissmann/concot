@@ -41,15 +41,17 @@ class TestesControllerSpec extends Specification {
     	when:
     	controller.renderizeXML()
     	then:
-    	response.text == "<livro titulo='Falando de Grails'/>"
     	response.xml.@titulo.text() == "Falando de Grails"
+        response.xml.@ano == 2015
+        response.xml.indice.list().size() > 0
     }
 
-    void "testando o retorno em JSON"() {
+    void "verificando o retorno em JSON. Será bom o livro?"() {
     	when:
     	controller.renderizeJSON()
     	then:
-    	response.text == '{"titulo":"Falando de Grails"}'
     	response.json.titulo == "Falando de Grails"
+        response.json.ano == 2015
+        response.json.capitulos.length() > 0
     }
 }
